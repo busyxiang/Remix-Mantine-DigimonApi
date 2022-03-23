@@ -5,13 +5,15 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "remix";
-import type { MetaFunction } from "remix";
+} from 'remix';
+import type { MetaFunction } from 'remix';
+
+import Layout from './components/Layout';
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
+  charset: 'utf-8',
+  title: 'Remix - Digimon API',
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 export default function App() {
@@ -22,7 +24,10 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <Layout>
+          <Outlet />
+        </Layout>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
