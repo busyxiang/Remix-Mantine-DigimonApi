@@ -2,7 +2,6 @@ import {
   Navbar as MantineNavBar,
   Anchor,
   Group,
-  Text,
   ScrollArea,
 } from '@mantine/core';
 import { Link } from 'remix';
@@ -20,27 +19,27 @@ const NavBar = () => {
     },
     {
       label: 'Fresh',
-      path: '/fresh',
+      path: '/level/fresh',
     },
     {
       label: 'Training',
-      path: '/training',
+      path: '/level/training',
     },
     {
       label: 'Rookie',
-      path: '/rookie',
+      path: '/level/rookie',
     },
     {
       label: 'Champion',
-      path: '/champion',
+      path: '/level/champion',
     },
     {
       label: 'Ultimate',
-      path: '/ultimate',
+      path: '/level/ultimate',
     },
     {
       label: 'Mega',
-      path: '/mega',
+      path: '/level/mega',
     },
   ];
 

@@ -1,4 +1,4 @@
-import { AppShell, Header, Title } from '@mantine/core';
+import { AppShell, Header, Title, ScrollArea } from '@mantine/core';
 import { ReactNode } from 'react';
 
 import NavBar from '../Navbar';
@@ -19,7 +19,7 @@ const Layout = ({ children }: Props) => {
         </Header>
       }
     >
-      {children}
+      <ScrollArea>{children}</ScrollArea>
     </AppShell>
   );
 };
