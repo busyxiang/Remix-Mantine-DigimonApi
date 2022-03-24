@@ -44,9 +44,9 @@ const NavBar = () => {
   ];
 
   return (
-    <MantineNavBar width={{ base: 200 }} p="md">
+    <MantineNavBar width={{ base: 150 }} p="md">
       <MantineNavBar.Section grow component={ScrollArea}>
-        <Group direction="column">
+        <Group direction="column" align="center">
           {navLinks.map((link) => (
             <Anchor key={link.label} component={Link} to={link.path}>
               {link.label}
