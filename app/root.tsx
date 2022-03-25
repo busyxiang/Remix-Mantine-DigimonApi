@@ -5,11 +5,16 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  LinksFunction,
+  useTransition,
 } from 'remix';
 import type { MetaFunction } from 'remix';
 import { MantineProvider, ColorSchemeProvider } from '@mantine/core';
 import type { ColorScheme } from '@mantine/core';
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, useEffect } from 'react';
+
+import NProgress from 'nprogress';
+import nprogressStyles from 'nprogress/nprogress.css';
 
 import Layout from './components/Layout';
 
@@ -19,7 +24,28 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
+export const links: LinksFunction = () => [
+  {
+    rel: 'stylesheet',
+    href: nprogressStyles,
+  },
+];
+
+NProgress.configure({
+  showSpinner: false,
+});
+
 export default function App() {
+  const transition = useTransition();
+
+  useEffect(() => {
+    if (transition.state === 'loading' || transition.state === 'submitting') {
+      NProgress.start();
+    } else {
+      NProgress.done();
+    }
+  }, [transition.state]);
+
   return (
     <html lang="en">
       <head>
